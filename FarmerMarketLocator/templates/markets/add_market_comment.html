@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Add a Comment{% endblock %}
+
+{% block main %}
+<form method="POST" id="comment_form">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Add a comment?</legend>
+        <div class="form-group">
+            {{ form.content.label(class="form-control-label") }}
+            {% if form.content.errors %}
+                {{ form.content(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.content.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.content(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+    </fieldset>
+    <div class="form-group">
+        {{ form.submit(class="btn btn-outline-light") }}
+        <a href="{{url_for('markets.show_market',market_id=market.id)}}" class="btn btn-outline-dark">Go Back</a>
+    </div>
+</form>
+
+{% endblock %}
