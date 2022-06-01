@@ -17,4 +17,4 @@ Features: Responsive web design, two-factor authentication, authenticated user r
 <p>python3 -m venv venv</p>
 <p>source venv/bin/activate</p>
 <p>pip install -r requirements.txt</p>
-<p>flask run app.py</p>
+<p>flask run</p>
