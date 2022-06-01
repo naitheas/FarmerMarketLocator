@@ -9,9 +9,9 @@ Features: Responsive web design, two-step authentication, authenticated user rou
 <h3>API List</h3><hr>
 <a href="https://search.ams.usda.gov/farmersmarkets/v1/svcdesc.html">USDA</a> |
 <a href="https://www.twilio.com/docs/verify/api">Twilio</a> |
-<a href="https://developer.mapquest.com/documentation/geocoding-api/">Mapquest</a>
+<a href="https://developer.mapquest.com/documentation/geocoding-api/">Mapquest</a><br><br>
 
 
-To Run, use python 3 from within the primary directory folder, FMLocator
-<u>Terminal command</u>
-$python3 app.py
+<p>To Run, use python 3 from within the primary directory folder, FMLocator</p>
+<p><u>Terminal command</u></p>
+<p>$python3 app.py</p>
