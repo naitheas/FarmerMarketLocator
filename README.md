@@ -12,7 +12,8 @@ Features: Responsive web design, two-factor authentication, authenticated user r
 <a href="https://developer.mapquest.com/documentation/geocoding-api/">Mapquest</a><br><br>
 
 
-# To Run, use flask from within the primary directory folder, FMLocator
+# To Run
+<p>Use flask from within the primary directory folder, FMLocator</p>
 <p>Terminal commands ---- </p>
 <p>python3 -m venv venv</p>
 <p>source venv/bin/activate</p>
