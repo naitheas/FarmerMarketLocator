@@ -6,14 +6,14 @@ Features: Responsive web design, two-factor authentication, authenticated user r
 <p>Database: PostgreSQL</p>
 
 
-<h3>API List</h3><hr>
+# API List
 <a href="https://search.ams.usda.gov/farmersmarkets/v1/svcdesc.html">USDA</a> |
 <a href="https://www.twilio.com/docs/verify/api">Twilio</a> |
 <a href="https://developer.mapquest.com/documentation/geocoding-api/">Mapquest</a><br><br>
 
 
-<p>To Run, use flask from within the primary directory folder, FMLocator</p>
-<p>Terminal commands</p>
+# To Run, use flask from within the primary directory folder, FMLocator
+<p>Terminal commands ---- </p>
 <p>python3 -m venv venv</p>
 <p>source venv/bin/activate</p>
 <p>pip install -r requirements.txt</p>
