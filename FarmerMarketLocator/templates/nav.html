@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-md navbar-custom">
+  <a class="navbar-brand mr-4" href="/"><img src="/static/images/clipart297019.png" id="menuIcon"></a>
+  <form class="navbar-form" id="search" action="/search" method="POST">
+    <div class="input-group" style="width:85%">
+    <input type="text" pattern="\d*" class="form-control mr-sm-2" placeholder="Search U.S. Zip Code" name="zip" id="zip" minlength="5" maxlength="5" required>
+    </div>
+  </form>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarToggle">
+    <div class="navbar-nav mr-auto">
+      <a class="nav-item nav-link" href="{{url_for('main.homepage')}}">Home</a>
+      {% if current_user.is_authenticated %}
+      <a class="nav-item nav-link" href="{{url_for('users.user_profile',user_id=current_user.id)}}">Profile</a>
+      <a class="nav-item nav-link" href="{{url_for('users.logout')}}">Log Out</a>
+      {% else %}
+      <a class="nav-item nav-link" href="{{url_for('users.login')}}">Login</a>
+      <a class="nav-item nav-link" href="{{url_for('users.register_user')}}">Register</a>
+      {% endif %}
+      <a class="nav-item nav-link" href="{{url_for('main.resources')}}">Resources</a>
+    </div>
+  </div>
+</nav>

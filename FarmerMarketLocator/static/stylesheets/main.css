@@ -1,0 +1,123 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: Arial;
+  font-family: "Inter", sans-serif;
+  background-color: white;
+  }
+.container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.15fr 0.1fr 2fr 0.1fr;
+  grid-template-areas:
+    "banner banner banner banner"
+    "alerts alerts alerts alerts"
+    "main main main main"
+    "footer footer footer footer";
+  font-weight: 800;
+  grid-gap: 0;
+  font-size: 12px;
+  text-align: center;
+  color: #003720;
+  }
+.child {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+#menuIcon {
+  height: 25px;
+  width: 25px;
+  margin: 15px 15px;
+  }
+#banner {
+  grid-area: banner;
+  border-radius: 5px;
+  padding-top: 5px;
+  display: inline-block;
+  }
+.navbar-custom {
+  background-color: #269968;
+  border-radius: 5px;
+}
+  /* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: burlywood;;
+ }
+  /* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: burlywood;
+}
+  /* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: burlywood;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+     outline: none;
+     box-shadow: none;
+}
+a {
+  color: burlywood;
+  text-decoration: none;
+}
+a.active {
+  color: #ffffff;
+}
+a:hover {
+  color: #ffffff;
+}
+legend {
+  text-align:left;
+  margin: 5px 0 5px 0;
+}  
+#alerts {
+  grid-area: alerts;
+  border-radius:5px;
+  padding-top: 5px;
+  }
+main {
+  grid-area: main;
+  padding-top: 5px;
+  border-radius: 25px;
+  background-color: #269968;
+  }
+.child .card {
+  max-width: 50vw;
+  background-color: #269968;
+  text-align: center;
+  }
+.form-group {
+  margin: 0 75px 0 75px;
+}
+
+ul {
+  list-style: none;
+}
+footer {
+  grid-area: footer;
+  border-radius:5px;
+  padding-top: 5px;
+  }
+
+
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 0.4fr 0.2fr 1fr 0.2fr; */
+    grid-template-areas:
+      "banner"
+      "alerts"
+      "main"
+      "footer";
+      /* grid-gap: 0.2rem; */
+    }
+}
+
+
+

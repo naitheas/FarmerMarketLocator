@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+{% block main %}
+<div id="searchResultContainer">
+    <ul class="list-group list-group-flush">
+        {% for market in market_list %}
+        {% set name = market.marketname[4:] %}
+            <li class="list-group-item bg-transparent"><a href="{{url_for('markets.show_market',market_id=market.id)}}">{{name}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

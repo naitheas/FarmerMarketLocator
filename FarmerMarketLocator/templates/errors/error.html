@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block css%}
+    <link rel="stylesheet" href="/static/stylesheets/errors.css">
+{% endblock %}
+{% block title %}Error Occurred {% endblock %}
+{% block main %}
+<div id="errorPage">
+    <h1>Oops!</h1>
+</div>
+<div>
+    {{ message }}
+</div>
+{% endblock %}
+

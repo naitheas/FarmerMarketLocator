@@ -1,0 +1,8 @@
+main {
+  grid-area: main;
+  border-radius: 25px;
+  background: black;
+  background-image:url("/static/images/hello-i-m-nik-LUYD2b7MNrg-unsplash.jpg");
+  background-size:cover;
+  color:white;
+}

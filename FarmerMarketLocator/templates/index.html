@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title%}
+  Homepage
+{% endblock %}
+
+{% block main %}
+
+<div class="child">
+  {% if current_user.is_authenticated %}
+  <h1>
+    Welcome back!
+  </h1> 
+  {% else %}
+  <h1>Welcome!</h1>
+  <div class="child">
+    <p>If you've stumbled here - you're likely looking for help
+    to find a local farmers market.
+    To use the application, enter a valid U.S. zipcode to
+    find a list for your area.</p>
+  </div>
+  {% endif %}
+  <div class="child">
+    <legend class="border-bottom mb-4 mt-2">Did you know?</legend>
+      <p>{{ random_fact }}</p>
+      <small>Facts and information obtained from the <a href="https://farmersmarketcoalition.org/education/qanda/" target="_blank">FMC</a> website. </small>
+  </div>
+</div>
+
+<div class="child mt-4">
+    <legend>Recent User Comments</legend>
+    <div class="userComments">
+      {% if comments %}
+       {% for comment in comments.items %}
+       <div class="card border-dark mb-1">
+        <div class="card-header border-light">
+          On <a href="{{url_for('markets.show_market', market_id=comment.market.id )}}">{{ comment.market.name }}</a>
+        </div>
+        <div class="card-body">
+          <p>
+            By <a href="{{url_for('users.user_profile',user_id=comment.user.id)}}">{{ comment.user.username }}</a> - 
+            <q>{{ comment.content }}</q></p>
+        </div>
+      </div>
+       {% endfor %}
+       {% for page_num in comments.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2) %}
+         {% if page_num %}
+           {% if comments.page == page_num %}
+         <a class="btn btn-success mb-4" href="{{url_for('main.homepage',page=page_num)}}">{{page_num}}</a>
+           {% else %}
+           <a class="btn btn-outline-success mb-4" href="{{url_for('main.homepage',page=page_num)}}">{{page_num}}</a>
+           {% endif %}
+         {% endif %}
+         {% endfor %}
+      {% else %}
+        <div>
+          <p>
+           Not much going on. Join up and go comment!
+          </p>
+        </div>
+      {% endif %}
+     </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+

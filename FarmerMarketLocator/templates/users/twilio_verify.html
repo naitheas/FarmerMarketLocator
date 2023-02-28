@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}User Login{% endblock %}
+
+{% block main %}
+
+
+<div id="twilioVerify">
+
+
+<form method="POST" id="twilioVerify">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Verify Code</legend>
+            <small>
+                Two-step verification option provided by <a href="https://www.twilio.com/">Twilio</a>
+            </small>
+            <div class="form-group">
+                {{ form.verificationcode.label(class="form-control-label") }}
+
+                {% if form.verificationcode.errors %}
+                    {{ form.verificationcode(class="form-control form-control-md is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.verificationcode.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.verificationcode(class="form-control form-control-md") }}
+                {% endif %}
+            </div>
+        
+        </fieldset>
+        <div class="pt-3 mb-3">
+            {{ form.submit(class="btn btn-outline-light") }}
+        </div>
+
+  <div class="border-top pt-3">
+    <small>
+        Need An New Code? <a class="ml-2" href="{{url_for('verify.twilio_login')}}">Code Request</a>
+    </small>
+</div>
+</form>
+</div>
+
+  {% endblock %}

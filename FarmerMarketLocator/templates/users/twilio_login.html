@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}User Login{% endblock %}
+
+{% block main %}
+
+
+<div id="twilioLogin">
+
+
+<form method="POST" id="twilioLogin">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Twilio User Login</legend>
+            <div class="form-group">
+                {{ form.email.label(class="form-control-label") }}
+
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control form-control-md is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class="form-control form-control-md") }}
+                {% endif %}
+            </div>
+        
+        </fieldset>
+        <div class="pt-3 mb-3">
+            {{ form.submit(class="btn btn-outline-light") }}
+            <a href="{{url_for('users.login')}}" class="btn btn-outline-dark">Go Back</a>
+</div>
+
+
+
+  <div class="border-top pt-3">
+    <small>
+        <a class="pt-2 pb-5" href="{{url_for('users.reset_request')}}">Forgot Password?</a></small><br>
+    <small class="pt-3">
+        Need An Account? <a class="ml-2" href="{{url_for('users.register_user')}}">Sign Up Now</a>
+    </small>
+</div>
+</form>
+</div>
+
+  {% endblock %}
+
