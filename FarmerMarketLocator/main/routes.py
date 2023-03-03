@@ -5,7 +5,7 @@ from flask import render_template,flash,request,Blueprint,redirect,url_for
 from FarmerMarketLocator.utils import get_marketlist
 from FarmerMarketLocator.models import Comment,User,Market,Favorite,MarketView,CommentView,UserView,FavoriteView
 
-with open("/mnt/d/Code/Coding/cap1/FarmerMarketLocator/static/fact_list.yml", "r") as file:
+with open("FarmerMarketLocator/FarmerMarketLocator/static/fact_list.yml", "r") as file:
     try:
         fact_data = yaml.safe_load(file)
     except yaml.YAMLError as exception:
