@@ -1,8 +1,12 @@
 # Capstone-Project
-Farmers Market Locator is an web application that can be used to locate a farmers market based off the user's zipcode input. This application allows an account user to favorite their markets for quick reference.
-Features: Responsive web design, two-step authentication, authenticated user routes,pagination, user password resets, blueprinting
+Farmers Market Locator is an web application that can be used to locate a farmers market based off the user's zipcode input. This application allows an account user to favorite their markets for quick reference or add market profile comments.
+<br>
+Features: Responsive web design, two-step authentication, authenticated user routes, pagination, user password resets and blueprinting.
+<br>
 Front End: BootStrap,FontAwesome, Javascript
+<br>
 Back End: Python, Flask, SQLAlchemy, BCrypt, WTForms, Flask Mail, Flask Login, Flask Admin, PyJWT
+<br>
 Database: PostgreSQL
 
 
